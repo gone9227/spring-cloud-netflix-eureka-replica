@@ -2,10 +2,6 @@
 
 ## Spring boot + Spring Cloud Gateway + Eureka
 
-### 구조
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/268da5d1-e0cd-474e-919f-105853bda425/Untitled.png)
-
 ### Eureka란?
 
 - Eureka는 **AWS와 같은 Cloud 시스템에서 서비스의 로드 밸런싱과 실패처리 등을 유연하게 가져가 위해 각 서비스들의 IP / Port / InstanceId를 가지고 있는 REST 기반의 미들웨어 서버**
