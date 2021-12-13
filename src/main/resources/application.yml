@@ -1,0 +1,57 @@
+management:
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      base-path: /
+      # By default, only 'health' and 'info' are accessible via web
+      exposure:
+        include: '*'
+
+---
+spring:
+  config:
+    activate:
+      on-profile: "eureka1"
+
+server:
+  port: 8787
+  enableSelfPreservation: false
+
+# Eureka
+eureka:
+  instance:
+    appName: EurekaReplicaTestApp
+    hostname: eureka1
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    registryFetchIntervalSeconds: 10
+    serviceUrl:
+      defaultZone: http://eureka2:8788/eureka/
+
+---
+spring:
+  config:
+    activate:
+      on-profile: "eureka2"
+
+server:
+  port: 8788
+  enableSelfPreservation: false
+
+# Eureka
+eureka:
+  instance:
+    appName: EurekaReplicaTestApp
+    hostname: eureka2
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    registryFetchIntervalSeconds: 10
+    serviceUrl:
+      defaultZone: http://eureka1:8787/eureka/
