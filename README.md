@@ -67,7 +67,7 @@
                 fetch-registry: true
                 registryFetchIntervalSeconds: 10
                 serviceUrl:
-            			# 서로의 Host:port 를 설정함
+           # 서로의 Host:port 를 설정함
                   defaultZone: http://eureka2:8788/eureka/
             
             ---
@@ -112,7 +112,7 @@
         register-with-eureka: true
         fetch-registry: true
         serviceUrl:
-    			# Eureka Server 주소 입력
+    	# Eureka Server 주소 입력
           defaultZone: http://eureka1:8787/eureka/, http://eureka2:8788/eureka/
         healthcheck:
           enabled: true
